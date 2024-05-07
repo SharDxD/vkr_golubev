@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Заказ №</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://knockoutjs.com/downloads/knockout-3.0.0.debug.js" type="text/javascript"></script>
+    <script>
+	    var x = '{{ data|tojson|safe }}';
+    </script>
+  </head>
+  <body>
+    <h1 id="order">Заказ №</h1>
+
+    <form id="num_order_token">
+      <label for="order-number">Номер заказа:</label>
+      <input type="text" id="order-number" name="order-number" placeholder="Введите номер заказа" required>
+
+      <label for="token">Токен:</label>
+      <input type="text" id="token" name="token" placeholder="Введите выданный токен" required>
+
+      <button type="submit">Обновить</button>
+    </form>
+
+    <table id="orders">
+      <thead>
+        <tr>
+          <th id="id">Номер</th>
+          <th id="name">Наименование товара</th>
+          <th id="category">Категория</th>
+          <th id="num">Количество</th>
+          <th id="weight">Общий вес</th>
+          <th id="price">Стоимость</th>
+          <th id="status">Статус</th>
+          <th id="datetime">Дата и время</th>
+          <th id="comment">Комментарии</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: items">
+        <tr>
+          <td contenteditable="true" data-bind="text: id"></td>
+          <td contenteditable="true" data-bind="text: name"></td>
+          <td contenteditable="true" data-bind="text: category"></td>
+          <td contenteditable="true" data-bind="text: num"></td>
+          <td contenteditable="true" data-bind="text: weight"></td>
+          <td contenteditable="true" data-bind="text: price"></td>
+          <td contenteditable="true" data-bind="text: status"></td>
+          <td contenteditable="true" data-bind="text: datetime"></td>
+          <td contenteditable="true" data-bind="text: comment"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" id="add" onclick="addRow()">Добавить</button>
+    <form id="change_table">
+
+      <label for="token">Токен:</label>
+      <input type="text" id="token" name="token" placeholder="Введите выданный токен" required>
+
+      <button type="submit">Сохранить изменения таблицы</button>
+    </form>
+
+    <footer style="text-align: center; font-size: 14px; margin-top: 50px;">
+      ©2023 «ВКР Голубев К.Д., Гизатуллин Ф.И.»
+    </footer>
+    <script src="/static/js/home.js"></script>
+</body></html>

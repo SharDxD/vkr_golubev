@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Генерация QR-кода</title>
+  <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+  <h1>Генерация QR-кода</h1>
+  <form method="post" action="/qr">
+    <label for="order-number">Номер заказа:</label>
+    <input type="text" id="order-number" name="order-number" placeholder="Введите номер заказа" required>
+    <button type="submit">Сгенерировать QR-код</button>
+  </form>
+
+<img src= "{{img}}">
+
+  <form method="post" action="/orders">
+    <button type="submit" >Вернуться на главный экран</button>
+  </form>
+</body>
+</html>

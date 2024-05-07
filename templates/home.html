@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Заказ №</title>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f7f7f7;
+      }
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 50px auto;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      }
+      th, td {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #444;
+        color: #fff;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-width: thin;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+      }
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #444;
+        color: #fff;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Заказ №</h1>
+
+    <form method="post" action="/update_tabel">
+      <label for="order-number">Номер заказа:</label>
+      <input type="text" id="order-number" name="order-number" placeholder="Введите номер заказа" required>
+
+      <label for="token">Токен:</label>
+      <input type="text" id="token" name="token" placeholder="Введите выданный токен" required>
+
+      <button type="submit">Обновить</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Номер</th>
+          <th>Наименование товара</th>
+          <th>Категория</th>
+          <th>Количество</th>
+          <th>Общий вес</th>
+          <th>Стоимость</th>
+          <th>Статус</th>
+          <th>Дата и время</th>
+          <th>Комментарии</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td contenteditable="true">1</td>
+          <td contenteditable="true">Кирпич</td>
+          <td contenteditable="true">1</td>
+          <td contenteditable="true">500 шт.</td>
+          <td contenteditable="true">1 тонна</td>
+          <td contenteditable="true">25 000 руб.</td>
+          <td contenteditable="true">В процессе</td>
+          <td contenteditable="true">2023-04-22 14:30:00</td>
+          <td contenteditable="true">Комментарий к заказу</td>
+        </tr>
+        <tr>
+          <td contenteditable="true">2</td>
+          <td contenteditable="true">Цемент</td>
+          <td contenteditable="true">1</td>
+          <td contenteditable="true">50 мешков</td>
+          <td contenteditable="true">500 кг</td>
+          <td contenteditable="true">15 000 руб.</td>
+          <td contenteditable="true">Готово</td>
+          <td contenteditable="true">2023-04-21 09:45:00</td>
+          <td contenteditable="true">Комментарий к заказу</td>
+        </tr>
+        <tr>
+          <td contenteditable="true">3</td>
+          <td contenteditable="true">Доски</td>
+          <td contenteditable="true">2</td>
+          <td contenteditable="true">100 шт.</td>
+          <td contenteditable="true">200 кг</td>
+          <td contenteditable="true">10 000 руб.</td>
+          <td contenteditable="true">Отменено</td>
+          <td contenteditable="true">2023-04-20 18:20:00</td>
+          <td contenteditable="true">Комментарий к заказу</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form method="post" action="/change">
+
+      <label for="token">Токен:</label>
+      <input type="text" id="token" name="token" placeholder="Введите выданный токен" required>
+
+      <button type="submit">Сохранить изменения таблицы</button>
+    </form>
+
+    <footer style="text-align: center; font-size: 14px; margin-top: 50px;">
+      ©2023 «ВКР Голубев К.Д., Гизатуллин Ф.И.»
+    </footer>
+  </body>
+</html>
